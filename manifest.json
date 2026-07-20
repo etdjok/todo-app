@@ -1,0 +1,20 @@
+{
+  "name": "计划管理",
+  "short_name": "计划管理",
+  "description": "日/周/月/季度/半年/年计划总结复盘工具，支持坚果云同步",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8e7",
+  "theme_color": "#ffb74d",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "zh-CN"
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#ffb74d" />
+    <meta name="description" content="日/周/月/季度/半年/年计划总结复盘工具，支持坚果云同步" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>计划管理 - 坚果云同步</title>
+    <script type="module" crossorigin src="/assets/index-Bujbzdkj.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-QLvvImEH.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then((registration) => {
+            registration.addEventListener('updatefound', () => {
+              const newWorker = registration.installing
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  if (confirm('发现新版本，是否立即更新？')) {
+                    newWorker.postMessage({ type: 'SKIP_WAITING' })
+                    window.location.reload()
+                  }
+                }
+              })
+            })
+          }).catch((error) => {
+            console.error('Service Worker 注册失败:', error)
+          })
+        })
+      }
+    </script>
+  </body>
+</html>
